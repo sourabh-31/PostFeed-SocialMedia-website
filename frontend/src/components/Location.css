@@ -1,0 +1,109 @@
+.right-section{
+    width: 20%;
+    position: absolute;
+    right: 12rem;
+    margin-top: 50px;
+}
+
+.right-section.isFixed{
+    position: fixed;
+    top: 50px;
+}
+
+.location-section{
+   margin: 10px 0 20px 0;
+   display: flex; 
+   align-items: center;
+}
+
+.location-section input{
+    border: none;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.location-section.overlayVisible input{
+    background-color: #666666;
+}
+
+.pencil-icon{
+    margin-left: 4rem;
+}
+
+.pencil-icon:hover{
+    cursor: pointer;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: #000;
+    width: 75%;
+    margin-left: 10px;
+    margin-top: -11px;
+}
+
+.warning{
+    display: flex;
+    margin: 30px 20px 30px 4px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #8f8f8f;
+}
+
+.warning div{
+    padding-left: 7px;
+    width: 75%;
+    margin-top: -2px;
+}
+
+/* Media Query */
+
+@media (max-width: 1525px) {
+    .pencil-icon{
+        margin-left: 3rem;
+    }
+    
+ }
+ 
+ @media (max-width: 1465px) {
+    .pencil-icon{
+        margin-left: 2rem;
+    }
+   
+ }
+ 
+ @media (max-width: 1405px) {
+    .pencil-icon{
+        margin-left: 1rem;
+    }
+    
+ }
+ 
+ @media (max-width: 1260px){
+    .pencil-icon{
+        margin-left: 0.5rem;
+    }
+ }
+ 
+ @media (max-width: 1235px){
+    .pencil-icon{
+        margin-left: 0rem;
+    }
+ }
+ @media (max-width: 1170px){
+    .pencil-icon{
+        margin-left: -0.5rem;
+    }
+ }
+ 
+ @media (max-width: 1013px){
+    .pencil-icon{
+        margin-left: -1rem;
+    }
+
+    .right-section{
+        display: none;
+    }
+ }

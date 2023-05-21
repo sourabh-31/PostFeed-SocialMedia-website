@@ -1,0 +1,204 @@
+.forgot-section{
+    background-color: #fff;
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 10%;
+    right: 25%;
+    z-index: 15; 
+    display: none;
+}
+
+.forgot-section.overlayVisible{
+    display: initial;
+}
+.forgot-main{
+    margin-bottom: 30px;
+    background-color: #effff4;
+    border-radius: 10px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    color: #008a45;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+.forgot-main span{
+    width: 80%;
+    margin-left: 5rem;
+    text-align: center;
+}
+.forgot-section h4{
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.forgot-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.forgot-form{
+    flex: 1; 
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;  
+    gap: 10px;
+}
+
+.forgot-form input {
+    width: 80%;
+}
+
+.signup-img{
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+.forgot-btn{
+    width: 80%;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+.btn-social-forgot{
+    width: 100%;
+    border-radius: 0%;
+    margin-bottom: 5px;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #dee2e6;
+}
+.btn-bottom{
+    margin-top: 2rem;
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.forgot-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-head div{
+    margin-right: 1.7rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.forgot-head button{
+    border: none;
+    background-color: #fff;
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.forgot-cancel{
+    margin-right: 2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.token-btn{
+    margin-bottom: 1.5rem;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width:1345px) {
+    .col-md-6{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1266px) {
+    .btn-social-forgot{
+        width: 100%;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .forgot-head div{
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:1195px) {
+    .forgot-img{
+        display: none;
+    }
+    .forgot-head{
+        display: block;
+
+    }
+    .forgot-head div{
+        margin-left: 3.2rem;
+        margin-bottom: 2rem;
+    }
+    .forgot-section h4{
+        margin-bottom: 0;
+    }
+    .forgot-body{
+        display: block;
+        margin-right: 3rem;
+    }
+    .forgot-form input{
+        width: 100%;
+    }
+
+    .forgot-btn{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1095px) {
+    .forgot-form input{
+        width: 100%;
+    }
+
+    .forgot-btn{
+        width: 100%;
+    }
+
+    .btn-social-forgot{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:1042px){
+    .forgot-body{
+        margin-right: 25px;
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .forgot-main span{
+        display: none;
+    }
+
+    .forgot-main{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width:767px){
+    .forgot-section{
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+}
+

@@ -1,0 +1,104 @@
+.comment-section{
+    background-color: #fff;
+    width: 50%;
+    height: 60%;
+    border: 1px solid black;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 10%;
+    right: 25%;
+    z-index: 20; 
+    overflow-y: scroll;
+    display: none;
+}
+
+.comment-section.overlayVisible{
+    display: initial;
+}
+
+.comment-section form{
+    position: sticky;
+    width: 100%;
+    bottom: 5px;
+    background-color: #fff;
+}
+
+.comment-btn{
+    width: 90%;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.comment-input{
+    width: 90%;
+    margin-left: 2rem;
+
+}
+
+.comment-section h3{
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.comment-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-part{
+  padding: 1rem 2rem;
+}
+
+.comment-part-1{
+    display: flex;
+}
+
+.comment-part-2{
+    padding-left: 2.2rem;
+    margin-top: -10px;
+}
+
+
+
+.comment-part-1 img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+/* media query */
+
+@media (max-width:1191px){
+     
+
+    .comment-btn{
+        width: 85%;
+
+    }
+    
+    .comment-input{
+        width: 85%;
+        
+    
+    }
+}
+
+@media (max-width:776px){
+     
+
+    .comment-btn{
+        width: 80%;
+        
+    }
+    
+    .comment-input{
+        width: 80%;
+        
+    }
+}

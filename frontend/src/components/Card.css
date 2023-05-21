@@ -1,0 +1,271 @@
+.card-section{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+.card1.overlayVisible img{
+    filter: brightness(0.4);
+}
+
+.card1.overlayVisible{
+    border: none;
+}
+.card{
+    width: 45vw;
+}
+
+.card1 h3{
+    font-weight: 700;
+}
+.card1 p{
+    font-size: 1.2rem;
+    word-spacing: 0.1rem;
+}
+.card1-drop{
+    display: flex;
+}
+.btn-custom-card{
+    border: none;
+    font-size: 1.24rem;
+    padding-left: 100px;
+}
+.btn-custom-card::after{
+    content: none;
+}
+
+.card2{
+    margin-top: 1.5rem;
+}
+.card2 h4{
+    font-weight: 700;
+    font-size: 1.653rem;
+}
+.card2 p{
+    font-size: 1.2rem;
+    word-spacing: 0.1rem;
+}
+
+.card3{
+    margin-top: 1.5rem;
+}
+.card3 h4{
+    font-weight: 700;
+    font-size: 1.737rem;
+}
+
+.more-icon{
+    font-size: 2rem;
+    margin-top: -15px;
+}
+.dropdown-item{
+    font-weight: 500;
+}
+.card-bottom img{
+    height: 2rem;
+    width: 2.1rem;
+    border-radius: 50%;
+}
+
+.card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.card-bottom-1{
+    display: flex;
+}
+.card-bottom-1 p{
+    padding-left: 10px;
+    padding-top: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.card-bottom-2{
+    display: flex;
+}
+.card-bottom-2 div{
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-right: 30px;
+}
+
+.card-bottom-icon{
+    margin-right: 8px;
+}
+
+.card-info{
+    display: flex;
+}
+
+.card-date{
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-date4{
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-location{
+    margin-left: 9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.card-location4{
+    margin-left: 9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.today-icon{
+    margin-right: 4px;
+}
+
+.location-icon{
+    margin-right: 4px;
+}
+
+.big-button{
+    margin-top: 20px;
+}
+
+.big-button button{
+    width: 100%;
+    color: #e56135;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 1px solid #bec2ca;
+} 
+.big-button button:hover{
+    background-color: #fff;
+    color: #e56135;
+}
+
+.card4-drop{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3px;
+}
+
+.card4{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
+.card4 h4{
+    font-weight: 700;
+    font-size: 1.737rem;
+}
+
+
+/* Media Query */
+
+@media (max-width: 1341px){
+    .card{
+        width: 40vw;
+    }
+}
+
+@media (max-width: 1013px){
+    .card{
+        width: 65vw;
+    }
+}
+
+@media (max-width: 975px){
+    .card1 h3{
+        font-size: 2.5vw;
+    }
+    
+    .card2 h4{
+        font-size: 2.5vw;
+    }
+    .card3 h4{
+        font-size: 2.6vw;
+    }
+    .card4 h4{
+        font-size: 2.6vw;
+    }
+
+}
+
+@media (max-width: 790px){
+    .card1 h3{
+        font-size: 1.22rem;
+    }
+    
+    .card2 h4{
+        font-size: 1.22rem;
+    }
+    .card3 h4{
+        font-size: 1.3rem;
+    }
+    .card4 h4{
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 789px){
+    .card-section{
+        width: 100%;
+    }
+    .card{
+        width: 100%;
+    }
+    .card1 p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 38em;
+    }
+
+    .card2 p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 38em;
+    }
+
+    .views{
+        position: absolute;
+        left: 58px;
+        bottom: 10px;
+    }
+}
+@media (max-width: 612px){
+    .card-date4{
+        font-size: 0.85rem;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 11em;
+    }
+
+    .card1 p{
+        font-size: 1.1rem;
+        word-spacing: 0rem;
+    }
+
+    .card2 p{
+        font-size: 1.1rem;
+        word-spacing: 0rem;
+    }
+}
+
+@media (max-width: 510px){
+    .card-date{
+        font-size: 0.87rem;
+    }
+}
+
+
+
+
+
+
+

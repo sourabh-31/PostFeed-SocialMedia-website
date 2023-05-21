@@ -1,0 +1,225 @@
+.edit-section{
+    background-color: #fff;
+    width: 50%;
+    border: 1px solid #000000;
+    margin-top: 40px;
+    border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 10%;
+    right: 25%;
+    z-index: 15; 
+    display: none;
+}
+
+.edit-section.overlayVisible{
+    display: initial;
+}
+.edit-main{
+    margin-bottom: 30px;
+    background-color: #effff4;
+    border-radius: 10px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: flex-end;
+    color: #008a45;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+.edit-main span{
+    width: 80%;
+    margin-left: 5rem;
+    text-align: center;
+}
+.edit-section h4{
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.edit-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.edit-form{
+    flex: 1; 
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;  
+    gap: 10px;
+}
+
+.edit-form input {
+    width: 90%;
+}
+
+
+.edit-btn{
+    width: 90%;
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.btn-social-edit{
+    width: 100%;
+    border-radius: 0%;
+    margin-bottom: 5px;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #dee2e6;
+}
+.btn-bottom{
+    margin-top: 2rem;
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.edit-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-head div{
+    margin-right: 1.7rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.edit-head button{
+    border: none;
+    background-color: #fff;
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.edit-cancel{
+    margin-right: 2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.token-btn{
+    margin-bottom: 1.5rem;
+}
+
+.subtitle{
+    height: 6vmax;
+    width: 90%;
+}
+
+.description{
+    height: 8vmax;
+    width: 90%;
+}
+.delete-btn{
+    margin-right: 20px;
+    height: 2.2rem;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width:1345px) {
+    .col-md-6{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1266px) {
+    .btn-social-edit{
+        width: 100%;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .edit-head div{
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:1195px) {
+    .edit-img{
+        display: none;
+    }
+    .edit-head{
+        display: block;
+
+    }
+    .edit-head div{
+        margin-left: 3.2rem;
+        margin-bottom: 2rem;
+    }
+    .edit-body{
+        display: block;
+        margin-right: 3rem;
+    }
+    .edit-form input{
+        width: 100%;
+    }
+
+    .edit-btn{
+        width: 100%;
+    }
+    .subtitle{
+        width: 100%;
+    }
+    
+    .description{
+        width: 100%;
+    }
+
+    .delete-btn{
+        margin-top: -40px;
+        margin-left: 40px;
+        height: 2.2rem;
+    }
+}
+
+@media screen and (max-width:1095px) {
+    .edit-form input{
+        width: 100%;
+    }
+
+    .edit-btn{
+        width: 100%;
+    }
+
+    .btn-social-edit{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:1042px){
+    .edit-body{
+        margin-right: 25px;
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .edit-main span{
+        display: none;
+    }
+
+    .edit-main{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width:767px){
+    .edit-section{
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+}
+

@@ -1,0 +1,187 @@
+.signup-section{
+    background-color: #fff;
+    width: 50%;
+    border: 1px solid black;
+    margin-top: 100px;
+    border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 40%;
+    right: 25%;
+    z-index: 10; 
+    transform: translateY(-50%);
+    display: none;
+}
+
+.signup-section.overlayVisible{
+    display: initial;
+}
+.signup-main{
+    margin-bottom: 30px;
+    background-color: #effff4;
+    border-radius: 10px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    color: #008a45;
+    font-size: 0.96rem;
+    font-weight: 600;
+}
+.signup-main span{
+    width: 80%;
+    margin-left: 5rem;
+    text-align: center;
+}
+.signup-section h4{
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.65rem;
+    font-weight: 700;
+}
+
+.signup-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-form{
+    margin-left: 50px;
+}
+
+.signup-img{
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+.signup-btn{
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.btn-social{
+    width: 100%;
+    border-radius: 0%;
+    margin-bottom: 5px;
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #dee2e6;
+}
+.btn-bottom{
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.signup-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-head div{
+    margin-top: 8px;
+    margin-right: 1.7rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.signup-head button{
+    border: none;
+    background-color: #fff;
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.signup-cancel{
+    margin-right: 2rem;
+    color: #000;
+    cursor: pointer;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width:1345px) {
+    .col-md-6{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1266px) {
+    .btn-social{
+        width: 100%;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .signup-head div{
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width:1195px) {
+    .signup-img{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1095px) {
+    .form-control{
+        width: 95%;
+    }
+
+    .signup-btn{
+        width: 95%;
+    }
+
+    .btn-social{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    .signup-head{
+        display: block;
+    }
+
+    .signup-head div{
+        margin-left: 3.2rem;
+        margin-bottom: 1rem;
+    }
+    .signup-section h4{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width:1042px){
+    .signup-body{
+        margin-right: 25px;
+        margin-left: -10px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .signup-main span{
+        display: none;
+    }
+
+    .signup-main{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+@media (max-width:767px){
+    .signup-section{
+        width: 100%;
+        right: 0;
+        left: 0;
+    }
+}
+
