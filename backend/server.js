@@ -17,6 +17,9 @@ dotenv.config({
 //connect to the database
 connectDB();
 
+app.get("/",(req,res)=> {
+    res.send("Working");
+});
 
 
 app.listen(process.env.PORT, ()=> {
