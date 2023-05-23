@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { server } from '..';
 
-const Forgot = ({handleSignUpClick, forgotVisible, setForgotVisible, setLoginVisible}) => {
+const Forgot = ({handleLoginClick, forgotVisible, setForgotVisible, setLoginVisible}) => {
 
     const cancelForgot = () => {
       setForgotVisible(false);
@@ -67,7 +67,7 @@ const Forgot = ({handleSignUpClick, forgotVisible, setForgotVisible, setLoginVis
     </div>
       <div className='forgot-head'>
       <h4>Forgot Password</h4>
-      <div>Want to Sign In? <button onClick={handleSignUpClick}>Sign In</button></div>
+      <div>Want to Sign In? <button onClick={handleLoginClick}>Sign In</button></div>
       </div>
       <div className='forgot-body'>
       <div className='forgot-form'>

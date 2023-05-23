@@ -109,7 +109,7 @@ function App() {
         />
         <Forgot
           forgotVisible={forgotVisible}
-          handleSignUpClick={handleSignUpClick}
+          handleLoginClick={handleLoginClick}
           setForgotVisible={setForgotVisible}
           setLoginVisible={setLoginVisible}
         />

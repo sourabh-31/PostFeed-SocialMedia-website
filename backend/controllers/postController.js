@@ -136,18 +136,74 @@ exports.unlikePost = catchAsyncErrors(async (req, res, next) => {
   //post a comment
   
   exports.commentPost = catchAsyncErrors(async (req, res, next) => {
-    const { postId, userId, text } = req.body;
+    const { postId, userId, text, commentFName, commentLName, commentImg } = req.body;
   
     try {
       const updatedPost = await Post.findByIdAndUpdate(
         postId,
-        { $push: { comments: { text, postedBy: userId } } },
+        {
+          $push: {
+            comments: {
+              text,
+              postedBy: userId,
+              commentFName,
+              commentLName,
+              commentImg
+            }
+          }
+        },
         { new: true }
       );
   
       res.json(updatedPost);
     } catch (error) {
+      console.error('An error occurred while updating the post:', error);
       res.status(500).json({ error: 'An error occurred while updating the post' });
     }
   });
   
+  
+
+  //Get all comments
+
+  exports.getComments = catchAsyncErrors(async (req, res) => {
+
+  const {postId} = req.params;
+
+  try {
+    // Find the post by its ID and populate the comments field
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+
+    res.json(post.comments);
+  } catch (error) {
+    console.error('An error occurred while fetching comments:', error);
+    res.status(500).json({ error: 'Failed to fetch comments' });
+  }
+});
+
+//delete comment 
+
+exports.deleteComment = catchAsyncErrors(async (req, res) => {
+  const {commentId} = req.params;
+
+  try {
+    const post = await Post.findOneAndUpdate(
+      { 'comments._id': commentId },
+      { $pull: { comments: { _id: commentId } } },
+      { new: true }
+    );
+
+    if (!post) {
+      return res.status(404).json({ error: 'Comment not found' });
+    }
+
+    res.json(post);
+  } catch (error) {
+    console.error('An error occurred while deleting the comment:', error);
+    res.status(500).json({ error: 'Failed to delete the comment' });
+  }
+});

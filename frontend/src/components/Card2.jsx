@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Card.css";
 import img2 from "../images/img2.png";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -8,6 +8,13 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 
 const Card2 = ({isWidthSmall}) => {
+
+  const [isLiked2, setIsLiked2] = useState(false);
+
+   const likeHandler2 = () => {
+      setIsLiked2(!isLiked2);
+   };
+
   return (
     <div className="card card2">
        <img src={img2} className="card-img-top" alt="img2" />
@@ -43,7 +50,21 @@ const Card2 = ({isWidthSmall}) => {
           isWidthSmall ? (
             "39 likes"
           ):(
-            <div><InsertCommentIcon /><ThumbUpOffAltIcon className="card-bottom-icon"/><ThumbDownOffAltIcon />39 likes</div>
+            <div>
+            {
+              isLiked2 ? (
+                <div>
+                <InsertCommentIcon />
+                <ThumbDownOffAltIcon onClick={likeHandler2} />
+                  40 likes</div>
+              ): (
+                <div>
+                <InsertCommentIcon />
+                <ThumbUpOffAltIcon className="card-bottom-icon" onClick={likeHandler2}/>
+                 39 likes</div>
+              )
+            }
+             </div>
           )
          }
          

@@ -7,31 +7,36 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import { Context, server } from '..';
 import axios from 'axios';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
-import Comment from './Comment'; // Import the Comment component
+import Comment from './Comment'; 
 
 const NewCard = ({ overlayVisible, loginVisible, isWidthSmall, handleEditClick }) => {
   const { user } = useContext(Context);
   const [posts, setPosts] = useState([]);
-  const [commentVisible, setCommentVisible] = useState(false); // State for comment visibility
+  const [commentVisible, setCommentVisible] = useState(false);
+  const [commentId, setCommentId] = useState("");
 
   useEffect(() => {
-    axios.get(`${server}/posts/all`, {
-      withCredentials: true,
-    })
-    .then(res => {
-      setPosts(res.data.posts);
-    })
-    .catch(() => {
-      setPosts([]);
-    });
+    axios
+      .get(`${server}/posts/all`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        const updatedPosts = res.data.posts.map((post) => ({
+          ...post,
+          isLiked: post.likes.includes(user._id),
+        }));
+        setPosts(updatedPosts);
+      })
+      .catch(() => {
+        setPosts([]);
+      });
   }, []);
 
-
-  const likeHandler = async (postId, userId) => {
+  const likeHandler = async (postId) => {
     try {
       const { data } = await axios.put(
         `${server}/posts/like`,
-        { postId, userId },
+        { postId, userId: user._id },
         {
           headers: {
             "Content-Type": "application/json",
@@ -40,30 +45,24 @@ const NewCard = ({ overlayVisible, loginVisible, isWidthSmall, handleEditClick }
         }
       );
   
-      
-      setPosts(prevPosts => {
-        return prevPosts.map(post => {
+      setPosts((prevPosts) =>
+        prevPosts.map((post) => {
           if (post._id === postId) {
-            return {
-              ...post,
-              likes: data.likes 
-            };
+            return { ...post, likes: data.likes };
           }
           return post;
-        });
-      });
+        })
+      );
     } catch (error) {
-      console.error('An error occurred while liking the post:', error);
+      console.error("An error occurred while liking the post:", error);
     }
   };
   
-  
-  
-  const unlikeHandler = async (postId, userId) => {
+  const unlikeHandler = async (postId) => {
     try {
-      await axios.put(
+      const { data } = await axios.put(
         `${server}/posts/unlike`,
-        { postId, userId },
+        { postId, userId: user._id },
         {
           headers: {
             "Content-Type": "application/json",
@@ -72,37 +71,28 @@ const NewCard = ({ overlayVisible, loginVisible, isWidthSmall, handleEditClick }
         }
       );
   
-      
-      setPosts(prevPosts => {
-        return prevPosts.map(post => {
+      setPosts((prevPosts) =>
+        prevPosts.map((post) => {
           if (post._id === postId) {
-            return {
-              ...post,
-              likes: post.likes.filter(id => id !== userId) 
-            };
+            return { ...post, likes: data.likes };
           }
           return post;
-        });
-      });
+        })
+      );
     } catch (error) {
-      console.error('An error occurred while unliking the post:', error);
+      console.error("An error occurred while unliking the post:", error);
     }
   };
   
-  
-  
 
-  
-  
-
-
-  const commentOpener = () => {
+  const commentOpener = (commentid) => {
     setCommentVisible(true);
+    setCommentId(commentid);
   };
 
   return (
-    <div className={`card newCard ${overlayVisible || loginVisible ? 'overlayVisible': ''}`}>
-      {posts.map(post => (
+    <div className={`card newCard ${overlayVisible || loginVisible ? "overlayVisible" : ""}`}>
+      {posts.map((post) => (
         <PostCard
           key={post._id}
           post={post}
@@ -114,18 +104,32 @@ const NewCard = ({ overlayVisible, loginVisible, isWidthSmall, handleEditClick }
           unlikeHandler={unlikeHandler}
         />
       ))}
-      {commentVisible && <Comment commentVisible={commentVisible} setCommentVisible={setCommentVisible} />} {/* Render the Comment component */}
+      {commentVisible && <Comment commentVisible={commentVisible} setCommentVisible={setCommentVisible} commentId={commentId} />}
     </div>
   );
-}
+};
 
 const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, likeHandler, unlikeHandler }) => {
+   
+   var isLiked;
+  if (post.likes.includes(user._id)) {
+      isLiked = true;
+  }
+  const handleLike = async () => {
+    if (isLiked) {
+      await unlikeHandler(post._id,user._id);
+    } else {
+      await likeHandler(post._id,user._id);
+    }
+
+  };
+
   return (
     <div>
       {post.coverUrl !== "" ? (
-        <img src={post.coverUrl} className="card-image-top card-image-custom" alt="post-image" />
+        <img src={post.coverUrl} className="card-image-top card-image-custom" alt="post" />
       ) : (
-        <img src={post.coverUrl} className="card-image-top card-image-custom-disable" alt="post-image" />
+        <img src={post.coverUrl} className="card-image-top card-image-custom-disable" alt="post" />
       )}
       <div className="post-container">
         <div className="card-body">
@@ -166,7 +170,18 @@ const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, li
                 {isWidthSmall ? (
                   "1.4k views"
                 ) : (
-                  <div><InsertCommentIcon onClick={commentOpener} /><ThumbUpOffAltIcon onClick={()=> likeHandler(post._id,user._id)} className="card-bottom-icon" /><ThumbDownOffAltIcon onClick={()=> unlikeHandler(post._id,user._id)} />{post.likes.length} likes</div>
+                  <div>
+                     <InsertCommentIcon onClick={()=> commentOpener(post)} />
+                      {
+                        isLiked ? (
+                          <ThumbDownOffAltIcon onClick={()=> handleLike()} />
+                        ) : (
+                          <ThumbUpOffAltIcon onClick={()=> handleLike()} className="card-bottom-icon" />
+                        )
+                      }
+                      {post.likes.length} 
+                      likes
+                      </div>
                 )}
               </div>
               <ShareIcon />

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import "./Card.css";
 import img1 from "../images/img1.png";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -6,11 +6,16 @@ import ShareIcon from '@mui/icons-material/Share';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
-import { Context } from '..';
+
 
 const Card1 = ({overlayVisible, loginVisible,isWidthSmall,forgotVisible,postVisible}) => {
+   
+   const [isLiked1, setIsLiked1] = useState(false);
 
-  const {user} = useContext(Context);
+   const likeHandler1 = () => {
+      setIsLiked1(!isLiked1);
+   };
+  
 
 
   return (
@@ -48,7 +53,21 @@ const Card1 = ({overlayVisible, loginVisible,isWidthSmall,forgotVisible,postVisi
           isWidthSmall ? (
             "23 likes"
           ):(
-            <div><InsertCommentIcon /><ThumbUpOffAltIcon className="card-bottom-icon"/><ThumbDownOffAltIcon />23 likes</div>
+            <div>
+            {
+              isLiked1 ? (
+                <div>
+                <InsertCommentIcon />
+                <ThumbDownOffAltIcon onClick={likeHandler1} />
+                  24 likes</div>
+              ): (
+                <div>
+                <InsertCommentIcon />
+                <ThumbUpOffAltIcon className="card-bottom-icon" onClick={likeHandler1}/>
+                 23 likes</div>
+              )
+            }
+             </div>
           )
          }
          
