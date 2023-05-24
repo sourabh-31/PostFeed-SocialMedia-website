@@ -12,11 +12,10 @@ import axios from 'axios';
 import Forgot from './components/Forgot';
 import Post from './components/Post';
 import Edit from './components/Edit';
-import Comment from './components/Comment';
 
 function App() {
 
-    const {setIsAuth, setUser} = useContext(Context);
+    const {setIsAuth, setUser, isAuth} = useContext(Context);
 
   
   const [overlayVisible, setOverlayVisible] = useState(false);
@@ -113,10 +112,11 @@ function App() {
           setForgotVisible={setForgotVisible}
           setLoginVisible={setLoginVisible}
         />
-        <Post 
+       <Post 
           postVisible={postVisible}
           setPostVisible={setPostVisible}
         />
+        
         <Edit 
           editVisible={editVisible}
           setEditVisible={setEditVisible}
