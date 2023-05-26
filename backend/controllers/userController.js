@@ -7,17 +7,24 @@ const generateResetToken = require("../utils/resetToken");
 const nodemailer = require("nodemailer");
 
 
-exports.registerUser = catchAsyncErrors(async(req,res,next)=> {
-    const{firstName, lastName, email, password, confirmPassword, imageUrl} = req.body;
+exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+  const { firstName, lastName, email, password, confirmPassword, imageUrl } = req.body;
 
-    if(password != confirmPassword){
-        return next(new ErrorHandler("Please enter the same password",400))
-    }
+  if (password !== confirmPassword) {
+    return next(new ErrorHandler("Please enter the same password", 400));
+  }
 
-    const user = await User.create({firstName, lastName, email, password, confirmPassword, imageUrl});
+  // Check if the email already exists
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return next(new ErrorHandler("User already exists", 400));
+  }
 
-    sendCookie(user,res,"Registered Successfully",201);
+  const user = await User.create({ firstName, lastName, email, password, confirmPassword, imageUrl });
+
+  sendCookie(user, res, "Registered Successfully", 201);
 });
+
 
 exports.loginUser = catchAsyncErrors(async(req,res,next)=> {
     const {email, password} = req.body;
