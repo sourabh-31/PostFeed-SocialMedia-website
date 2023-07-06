@@ -60,7 +60,7 @@ const Post = ({postVisible,setPostVisible}) => {
           <input 
             type="text" 
             className="form-control" 
-            placeholder='Enter a Link for the Cover Photo'
+            placeholder="Enter url for the Cover image (Leave empty if not needed)"
             value={coverUrl}
             onChange={(e) => setCoverUrl(e.target.value)} 
             />

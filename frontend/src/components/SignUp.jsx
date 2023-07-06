@@ -68,7 +68,7 @@ const SignUp = ({overlayVisible, handleLoginClick, setOverlayVisible}) => {
   return (
       <div className={`container signup-section ${overlayVisible ? 'overlayVisible': ''}`}>
     <div className='signup-main'>
-       <span>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now</span>
+       <span>Let's share our views and thoughts through posts. Sign up now</span>
        <CancelOutlinedIcon className='signup-cancel' onClick={cancelSignUp}/>
     </div>
       <div className='signup-head'>
@@ -140,7 +140,7 @@ const SignUp = ({overlayVisible, handleLoginClick, setOverlayVisible}) => {
           <input 
             type="text" 
             className="form-control" 
-            placeholder='Enter image url for Profile picture'
+            placeholder='Provide only url for Profile image'
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required

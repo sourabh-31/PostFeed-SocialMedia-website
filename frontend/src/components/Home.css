@@ -19,8 +19,8 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 445px;
-    right: 61.5%;
+    top: 40%;
+    left: 20%;
 }
 
 .home-text div{
@@ -45,9 +45,7 @@
     .home-text span{
         font-size: 1.28rem;
     }
-    .home-text{
-        top: 450px;
-    }
+    
 }
 
 @media (max-width:1147px){
@@ -60,39 +58,19 @@
         font-size: 1.1rem;
         padding-left: 2rem;
     }
-    .home-text{
-        top: 465px;
-    }
+    
 }
 
 @media (max-width:1028px){
-    .home-text div{
-        font-size: 1.8rem;
-        
-    }
     
     .home-text span{
         font-size: 1.1rem;
     }
 
-    .home-text{
-        right: 60%;
-        top: 470px;
-    }
 }
 
-@media (max-width:902px){
-    .home-text{
-        right: 57%;
-        top: 475px;
-    }
-}
 
 @media (max-width:840px){
-    .home-text{
-        right: 55%;
-        top: 485px;
-    }
 
     .home-text div{
         font-size: 1.7rem;
@@ -104,67 +82,37 @@
     }
 }
 
-@media (max-width:786px){
+@media (max-width: 767px){
+
     .home-text{
-        right: 50%;
-        top: 495px;
+        top: 35%;
+        left: 8%;
+        
     }
+    
 }
 
-@media (max-width:709px){
-    .home-text{
-        right: 45%;
-        top: 500px;
-    }
-}
+
 @media (max-width:659px){
     .home{
         /* height: 73.8vw; */
-        height: 84.8vw;
+        height: 76.7vw;
         background-size: 115vw;
         background-repeat: no-repeat;
         background-position: center top;
     }
 }
 
-@media (max-width:646px){
-    .home-text{
-        right: 42%;
-        top: 470px;
-    }
-}
 
-@media (max-width:614px){
-    .home-text{
-        right: 37%;
-        top: 450px;
-    }
-}
+
 
 @media (max-width:566px){
-    .home-text{
-        right: 33%;
-        top: 420px;
-        
-    }
+    
     .home-text div{
         font-size: 1.5rem;
         
     }
 }
 
-@media (max-width:533px){
-    .home-text{
-        right: 29%;
-        top: 400px;
-    }
-}
-
-@media (max-width:504px){
-    .home-text{
-        right: 27%;
-        top: 380px;
-    }
-}
 
 

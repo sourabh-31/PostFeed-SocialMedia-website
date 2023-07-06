@@ -61,7 +61,7 @@ const loginHandler = async(e) => {
   return (
     <div className={`container login-section ${loginVisible ? 'overlayVisible': ''}`}>
     <div className='login-main'>
-       <span>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now</span>
+       <span>Let's share our views and thoughts through posts. Sign up now</span>
        <CancelOutlinedIcon className='login-cancel' onClick={cancelLogin}/>
     </div>
       <div className='login-head'>

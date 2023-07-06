@@ -12,33 +12,6 @@
     z-index: 999;
 }
 
-.search-box input{
-    width: 23.5rem;
-    height: 2.5rem;
-    border: none;
-    border-radius: 20px;
-    padding-left: 3rem;
-    background-color: #f2f2f2;
-    font-size: 0.844rem;
-}
-
-.search-box input::placeholder{
-    color: #5c5c5c;
-    font-weight: 600;
-}
-
-.search-box {
-    position: relative;
-  }
-  
-  .input-icon {
-    position: absolute;
-    top: 50%;
-    left: 0.7rem;
-    transform: translateY(-50%);
-    color: #818181;
-  }
-
   .signin{
     font-weight: 600;
     display: flex;
@@ -47,7 +20,7 @@
   }
 
   .signin span{
-    color: #2f6ce5;
+    color: crimson;
     font-weight: 700;
   }
 
@@ -75,6 +48,11 @@
     border-radius: 50%;
 }
 
+.logo img{
+  width: 8.5rem;
+  margin-left: 5rem;
+}
+
 /* Media Query */
 @media screen and (min-width:767px){
       .null{
@@ -82,11 +60,6 @@
       }
 }
 
-@media screen and (max-width:1091px) {
-  .search-box{
-    display: none;
-  }
-}
 
 @media screen and (max-width:767px) {
   .head-text{
@@ -106,6 +79,6 @@
     }
 
     .logo{
-      margin-left: -40px;
+      margin-left: -120px;
     }
 }

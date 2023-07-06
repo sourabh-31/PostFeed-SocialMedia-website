@@ -136,9 +136,6 @@ const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, li
           <h5 className="card-title">{post.title}</h5>
           <div className='newCard-drop'>
             <h3>{post.subTitle}</h3>
-            {isWidthSmall ? (
-              <MoreHorizIcon />
-            ) : (
               <div className="dropdown">
                 <button className="btn btn-custom-card dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <MoreHorizIcon className='more-icon' />
@@ -157,7 +154,6 @@ const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, li
                   <li><button className="dropdown-item">Report</button></li>
                 </ul>
               </div>
-            )}
           </div>
           <p className="card-text">{post.description}</p>
           <div className="card-bottom">
@@ -167,9 +163,6 @@ const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, li
             </div>
             <div className="card-bottom-2">
               <div className='views'>
-                {isWidthSmall ? (
-                  "1.4k views"
-                ) : (
                   <div>
                      <InsertCommentIcon onClick={()=> commentOpener(post)} />
                       {
@@ -182,9 +175,7 @@ const PostCard = ({ post, user, isWidthSmall, handleEditClick, commentOpener, li
                       {post.likes.length} 
                       likes
                       </div>
-                )}
               </div>
-              <ShareIcon />
             </div>
           </div>
         </div>

@@ -161,6 +161,16 @@
     font-size: 1.737rem;
 }
 
+.auth-text{
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 60%;
+    padding: 2rem;
+    min-height: 100px;
+    font-size: 1.5rem;
+    color:crimson;
+}
+
 
 /* Media Query */
 
@@ -228,12 +238,6 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         max-width: 38em;
-    }
-
-    .views{
-        position: absolute;
-        left: 58px;
-        bottom: 10px;
     }
 }
 @media (max-width: 612px){

@@ -35,7 +35,7 @@
 
 
 .btn1{
-    width: 10rem;
+    width: 8rem;
     margin-bottom: 10px;
     background-color: #edeef0;
     font-size: 0.9rem;
@@ -88,6 +88,7 @@
 .menu-button{
     display: flex;
     width: 20rem;
+    justify-content: flex-end;
 }
 
   

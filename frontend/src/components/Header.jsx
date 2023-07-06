@@ -1,14 +1,15 @@
 import React, { useContext} from "react";
 import "./Header.css";
-import logo from "../images/logo.png";
-import SearchIcon from '@mui/icons-material/Search';
+import logo from "../images/logo.png"; 
 import {server, Context } from "..";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
+
 const Header = ({handleSignUpClick, handleLoginClick}) => {
 
-  const {isAuth, setIsAuth, user, setUser, setPost} = useContext(Context);
+  const {isAuth, setIsAuth, user,} = useContext(Context);
+
 
 
   const handleLogout = async () => {
@@ -50,10 +51,6 @@ const Header = ({handleSignUpClick, handleLoginClick}) => {
         <div className="logo">
             <img src={logo} alt="logo"/>
         </div>
-        <div className="search-box">
-            <SearchIcon className="input-icon" />
-            <input type="text" name="search" placeholder="Search for your favorite groups in ATG" />
-        </div>
         <div className="signin">
            {
             isAuth ? (
@@ -70,7 +67,7 @@ const Header = ({handleSignUpClick, handleLoginClick}) => {
                </button>
                {
                 isAuth ? (
-                  <ul className="dropdown-menu">
+                <ul className="dropdown-menu">
                <li><button className="dropdown-item" onClick={handleLogout}>Log Out</button></li>
               </ul>
                 ):(

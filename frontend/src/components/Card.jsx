@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState } from 'react';
 import "./Card.css";
-import Card1 from './Card1';
-import Card2 from './Card2';
-import Card3 from './Card3';
-import Card4 from './Card4';
 import NewCard from './NewCard';
-// import { Context } from '..';
+import { Context } from '..';
 
 
-const Card = ({overlayVisible, loginVisible, forgotVisible , postVisible, handleEditClick, setCommentVisible}) => {
+const Card = ({overlayVisible, loginVisible, forgotVisible , handleEditClick}) => {
 
   const [isWidthSmall, setIsWidthSmall] = useState(false);
-  // const {isAuth} = useContext(Context);
+  const {isAuth} = useContext(Context);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,19 +24,18 @@ const Card = ({overlayVisible, loginVisible, forgotVisible , postVisible, handle
 
   return (
     <div className={`container-fluid card-section ${overlayVisible || loginVisible ||forgotVisible ? 'overlayVisible': ''}`}>
-      <Card1 
-      overlayVisible={overlayVisible}
-      loginVisible={loginVisible}
-      forgotVisible={forgotVisible}
-      isWidthSmall={isWidthSmall}
-      postVisible={postVisible}
-      />
-      <Card2 isWidthSmall={isWidthSmall}/>
-      <Card3 isWidthSmall={isWidthSmall}/>
-      <Card4 isWidthSmall={isWidthSmall}/>
-      <NewCard 
+
+      {
+        isAuth ? (
+          <NewCard 
          isWidthSmall={isWidthSmall}
          handleEditClick={handleEditClick} />
+        ):(
+            <div className="auth-text">
+              Please Signup or Login to share or view posts.
+            </div>
+        )
+      }
       </div>
   )
 }
