@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {createContext} from "react";
 
-export const server = "http://localhost:4500/api/v1"
+export const server = "https://post-feed-server.onrender.com/api/v1"
 
 
 export const Context = createContext({isAuth: false});
